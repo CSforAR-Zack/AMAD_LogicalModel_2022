@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LogicalModel.LogicalPage"
+             Title="Logical Model"
+             BackgroundColor="{StaticResource Background}">
+    <VerticalStackLayout HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Spacing="20"
+                         Padding="20">
+        <Label Text="Welcome to my Logical Model!"
+               FontSize="30"
+               TextColor="{StaticResource Text}"/>
+
+        <HorizontalStackLayout HorizontalOptions="Center"
+                               Spacing="10">
+            <Button x:Name="leftButton"
+                    Clicked="EvaluateBool"
+                    Text="False"
+                    BackgroundColor="{DynamicResource OffState}"
+                    TextColor="{StaticResource Text}"/>
+            <Picker x:Name="operatorPicker"
+                    SelectedIndexChanged="EvaluateBool"
+                    Title="Select Operation"
+                    TitleColor="{StaticResource Text}"
+                    TextColor="{StaticResource Text}">
+                <Picker.Items>
+                    <x:String>AND</x:String>
+                    <x:String>OR</x:String>
+                    <x:String>XOR</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button x:Name="rightButton"
+                    Clicked="EvaluateBool"
+                    Text="False"
+                    BackgroundColor="{DynamicResource OffState}"
+                    TextColor="{StaticResource Text}"/>
+        </HorizontalStackLayout>
+        <Label x:Name="resultLabel"
+               Text="False"
+               HorizontalTextAlignment="Center"
+               FontSize="100"
+               BackgroundColor="{DynamicResource OffState}"
+               TextColor="{StaticResource Text}"/>
+    </VerticalStackLayout>
+</ContentPage>
